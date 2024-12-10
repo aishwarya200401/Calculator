@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        @media screen and (max-width:600px){
+            .diplay, .inputbox,.button,.buttonoperator .buttonkey{
+                width:100%;
+            }
+        } ;
+       
+    
+    </style>
+</head>
+<body>
+    
+      <div class="Main">     
+    <div class="calculator">
+        <input type="tel"class="key" placeholder="0"  id="output-screen"/>
+        <br><br>
+    <button onclick="clr()" class="clr">C</button>
+    <button onclick="del()" class="buttonoperator">Del</button>
+    <button onclick="buttonoperator('%')" class="buttonoperator">%</button>
+    <button onclick="buttonoperator('/')" class="buttonoperator">/</button>
+    <button onclick="button('7')">7</button>
+    <button onclick="button('8')">8</button>
+    <button onclick="button('9')">9</button>
+    <button onclick="buttonoperator('*')" class="buttonoperator">*</button>
+    <button onclick="button('4')">4</button>
+    <button onclick="button('5')">5</button>
+    <button onclick="button('6')">6</button>
+    <button onclick="buttonoperator('-')" class="buttonoperator">-</button>
+    <button onclick="button('1')">1</button>
+    <button onclick="button('2')">2</button>
+    <button onclick="button('3')">3</button>
+    <button onclick="buttonoperator('+')" class="buttonoperator">+</button>
+    <button onclick="button('.')">.</button>
+    <button onclick="button('0')">0</button>
+    <button onclick="calculate('=')"class="equal">= </button>          
+         <br>
+        
+         </div>
+        </div>
+        <script>
+            let outputscreen = document.getElementById("output-screen");
+            function button(num){
+                outputscreen.value += num;        
+                }
+                function buttonoperator(num){
+                    outputscreen.value += num;
+                }
+                function calculate(){
+                    try{
+                        outputscreen.value = eval (outputscreen.value);
+                    } 
+                    catch(err){
+                        alert("Invalid");
+                    }
+
+                    }   
+                    function clr(){
+                        outputscreen.value = " ";
+                    } 
+                    function del(){
+                        outputscreen.value = outputscreen.value.slice(0,-1);
+                    }
+                
+                           
+
+        </script>      
+</body>
+</html>
